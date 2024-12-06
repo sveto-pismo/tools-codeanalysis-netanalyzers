@@ -1,0 +1,1 @@
+﻿# SvetoPismo.Tools.CodeAnalysis.NetAnalyzers

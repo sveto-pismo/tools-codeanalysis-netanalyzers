@@ -1,0 +1,8 @@
+﻿<Project>
+  <ItemGroup>
+    <EditorConfigFiles Include="$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)\..\SvetoPismo.Tools.CodeAnalysis.NetAnalyzers.globalconfig'))">
+      <Link>SvetoPismo.Tools.CodeAnalysis.NetAnalyzers.globalconfig</Link>
+      <Visible>false</Visible>
+    </EditorConfigFiles>
+  </ItemGroup>
+</Project>
