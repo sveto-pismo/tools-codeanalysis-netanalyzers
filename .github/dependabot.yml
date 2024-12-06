@@ -1,0 +1,18 @@
+﻿version: 2
+registries:
+  self:
+    type: nuget-feed
+    url: https://nuget.pkg.github.com/sveto-pismo/index.json
+    username: sveto-pismo
+    password: ${{ secrets.GITHUB_TOKEN }}
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    registries:
+      - self

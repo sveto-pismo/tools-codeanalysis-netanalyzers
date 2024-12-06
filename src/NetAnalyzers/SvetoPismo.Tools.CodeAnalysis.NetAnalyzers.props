@@ -1,0 +1,7 @@
+﻿<Project>
+  <PropertyGroup>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <CodeAnalysisRuleSetLocation Condition="'$(CodeAnalysisRuleSetLocation)' == ''">$(NuGetPackageRoot)</CodeAnalysisRuleSetLocation>
+  </PropertyGroup>
+</Project>
