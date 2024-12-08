@@ -1,60 +1,52 @@
 ﻿
 <center style="padding: 2rem">
-    <img src="../tools-branding/assets/packageIcon.png" alt="SvetoPismo" width="128">
+    <img src="assets/packageIcon.png" alt="SvetoPismo" width="128">
     <h1>SvetoPismo.Tools.CodeAnalysis.NetAnalyzers</h1>
 </center>
 
-A NuGet package that sets the MSBuild properties such as Authors, PackageIcon, PackageLicenseFile, PackageReadmeFile, Copyright, and puts assets for Package Icon, License, and Readme files.
+This NuGet package leverages the power of Roslyn .NET Analyzers
+to enforce code quality standards that are tailored to the organization's specific needs.
+By default,
+the package uses a set of analyzer rules that have been configured to align with the organization's coding practices,
+ensuring that our code is always compliant and maintainable.
+
+Key features:
+
+- Utilize Roslyn .NET Analyzers for powerful and customizable code analysis
+- Defaults suited to the organization's coding practices
+- Ensures code compliance and maintainability
 
 ## Installation
-
 To install this package, use the NuGet Package Manager Console:
 
-```powershell
-PM> Install-Package SvetoPismo.Tools.Branding
+```shell
+PM> Install-Package SvetoPismo.Tools.CodeAnalysis.NetAnalyzers
 ```
-
-Or you can search for "SvetoPismo.Tools.Branding" in the NuGet Package Manager UI and install it from there.
+Or you can search for "SvetoPismo.Tools.CodeAnalysis.NetAnalyzers"
+in the NuGet Package Manager UI and install it from there.
 
 ## Usage
+After installing the package, the MSBuild and .editorconfig properties will be set automatically.
+- You can modify the MSBuild properties by updating the values in your .csproj or .vbproj file.
+- You can modify the .editorconfig properties by creating .editorconfig file and overriding the default values.
 
-After installing the package, the MSBuild properties will be set automatically. You can modify the properties by updating the values in your .csproj or .vbproj file.
+## Configuration
 
-For example, to set the Authors property, add the following to your .csproj or .vbproj file:
-
-```xml
-<PropertyGroup>
-    <Authors>$(Authors);John Doe;Jane Smith</Authors>
-</PropertyGroup>
+```editorconfig
+dotnet_diagnostic.<Rule>.severity = <Severity>
 ```
 
-## MSBuild Properties
+For example, to change the severity level of `CA9999` to "error", add the following line to your .editorconfig file:
 
-This package sets the following MSBuild properties:
-
-- Authors
-- PackageIcon
-- PackageLicenseFile
-- PackageReadmeFile
-- Copyright
-
-You can modify these properties by updating your .csproj or .vbproj file as described in the Usage section.
-
-## Assets
-
-This package includes the following assets:
-
-- A Package Icon: `assets/packageIcon.png`
-- A License: `assets/LICENSE`
-- A Readme: `README.md`
-
-To access the assets, use the relative paths shown above.
+```editorconfig
+dotnet_diagnostic.CA9999.severity = error
+```
 
 ## Contributing
-
 If you find a bug or have a feature request, please create an issue in the GitHub repository.
 
-To contribute code, fork the repository and submit a pull request. Please ensure that your code follows the project's coding standards and is thoroughly tested.
+To contribute code, fork the repository and submit a pull request.
+Please ensure that your code follows the project's coding standards and is thoroughly tested.
 
 ## License
-This package is released under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+This package is released under the MIT License. See the LICENSE.txt file for details.
